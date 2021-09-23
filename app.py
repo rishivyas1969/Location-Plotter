@@ -15,7 +15,8 @@ def index():
 
 @app.route('/success', methods=['POST'])
 def success():
-    global file, lst
+    global file
+    global lst
     if request.method=='POST':
         file = request.files['file']
         file.save(secure_filename('uploaded'+file.filename))
@@ -50,7 +51,7 @@ def success():
 
 @app.route('/plot')
 def plot():
-    
+
     html_str = map(lst)
 
     if type(html_str) == None:
