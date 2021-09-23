@@ -1,5 +1,3 @@
-from branca.element import Div
-from bs4.element import Script
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import pandas
@@ -15,7 +13,6 @@ def index():
 
 @app.route('/success', methods=['POST'])
 def success():
-    global file
     global lst
     if request.method=='POST':
         file = request.files['file']
