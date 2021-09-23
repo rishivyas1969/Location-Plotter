@@ -51,8 +51,9 @@ def success():
 
 @app.route('/plot')
 def plot():
-
-    html_str = map(lst)
+    buffer_lst = lst
+    html_str = map(buffer_lst)
+    lst.clear()
 
     if type(html_str) == None:
         return render_template('sample.html', txt="Can't reload again. Visit Home!")
