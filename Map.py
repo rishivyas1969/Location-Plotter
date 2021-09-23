@@ -3,8 +3,9 @@ import folium
 
 def map(lst=None):
 
-    if type(lst) == None:
+    if type(lst) == None or len(lst)==0:
         return None
+
     sum_lat=0
     sum_long=0
     for i in lst:

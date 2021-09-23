@@ -21,7 +21,7 @@ def success():
         file.save(secure_filename('uploaded'+file.filename))
         
         data = pandas.read_csv('uploaded'+file.filename.replace(' ', '_'))
-
+        lst.clear()
 
         col = data.columns
         col = [ x.lower() for x in col]
@@ -31,7 +31,6 @@ def success():
             return render_template("index.html", btn=['noAddress.html'])
         else:
             arc = Nominatim(user_agent="ny_explorer")
-
             for i in range(data.shape[0]):
                 sub_lst = []
                 sub_lst.append(data['address'][i])
@@ -43,6 +42,7 @@ def success():
 
             print(len(lst))
 
+
         if os.path.exists('uploaded'+file.filename.replace(' ', '_')):
             os.remove('uploaded'+file.filename.replace(' ', '_'))
 
@@ -51,11 +51,9 @@ def success():
 
 @app.route('/plot')
 def plot():
-    buffer_lst = lst
-    html_str = map(buffer_lst)
-    lst.clear()
+    html_str = map(lst)
 
-    if type(html_str) == None:
+    if html_str == None:
         return render_template('sample.html', txt="Can't reload again. Visit Home!")
 
     soup = BeautifulSoup(html_str, 'html.parser')
