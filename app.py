@@ -7,13 +7,14 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
+lst = []
+
 @app.route('/')
 def index():
     return render_template('index.html', btn=None)
 
 @app.route('/success', methods=['POST'])
 def success():
-    global lst
     if request.method=='POST':
         file = request.files['file']
         file.save(secure_filename('uploaded'+file.filename))
@@ -29,8 +30,6 @@ def success():
             return render_template("index.html", btn=['noAddress.html'])
         else:
             arc = Nominatim(user_agent="ny_explorer")
-
-            lst = []
 
             for i in range(data.shape[0]):
                 sub_lst = []
