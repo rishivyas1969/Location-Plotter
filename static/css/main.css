@@ -1,0 +1,23 @@
+@media only screen and (min-width: 1200px) {
+    .res-w {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1001px) {
+    .res-w {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 601px) {
+    .res-w {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .res-w {
+        width: 90%;
+    }
+}

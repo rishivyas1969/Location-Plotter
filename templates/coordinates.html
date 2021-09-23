@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="table-responsive bg-white">
+        <table class="table table-borderes">
+            <thead class="table-dark">
+                <tr>
+
+                    <th scope="col">Address</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longitude</th>
+                </tr>
+            </thead>
+            {% for item in lst %}
+            <tbody>
+                <tr>
+
+                    <td>{{ item[0] }} </td>
+                    <td>{{ item[1] }} </td>
+                    <td>{{ item[2] }} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="container d-block">
+        <a href="{{ url_for('plot')}}" target="blank"><button
+                class="btn btn-dark border border-primary res-w p-2 my-2">Plot</button></a>
+    </div>
+
+</body>
+
+</html>

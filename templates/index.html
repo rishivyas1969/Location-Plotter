@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/favi.png" type="image/gif" sizes="50x50">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+
+    <title>Pigeon GeoCoder!</title>
+</head>
+
+<body class="bg-black">
+    <div class="container-fluid bg-black my-5">
+        <div class="container text-center">
+            <div class="jumbotron jumbotron-fluid text-white"></div>
+            <div class="container">
+                <h1 class="display-4 text-white">Location Plotter</h1>
+                <p class="lead text-white">Please upload a .csv file which contains <i>Address</i> column.
+                </p>
+            </div>
+            <div class="text-center text-danger"> {{ text | safe}}</div>
+            <div class="container d-flex justify-content-center ">
+
+                <form class="w-100 " action="{{ url_for('success')}}" method="POST" enctype="multipart/form-data">
+                    <div class="form-group text-white  res-w p-2 m-auto">
+                        <input type="file" class="form-control text-center border border-primary bg-black text-primary"
+                            name="file" required>
+                    </div>
+                    <small id="emailHelp" class="form-text text-muted p-2">Your data is safe with us.</small><br>
+                    <button type="submit" class="btn btn-dark border border-primary res-w p-2 my-2">Find
+                        Coordinates</button>
+
+                </form>
+
+            </div>
+            {% include btn ignore missing %}
+        </div>
+    </div>
+
+</body>
+
+</html>
