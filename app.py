@@ -4,6 +4,7 @@ import pandas
 from geopy.geocoders import Nominatim
 from Map import map
 from bs4 import BeautifulSoup
+import os
 
 app = Flask(__name__)
 
@@ -41,6 +42,9 @@ def success():
                 print(sub_lst)
 
             print(len(lst))
+
+        if os.path.exists('uploaded'+file.filename.replace(' ', '_')):
+            os.remove('uploaded'+file.filename.replace(' ', '_'))
 
         return render_template("index.html", btn='coordinates.html', lst=lst)
 
