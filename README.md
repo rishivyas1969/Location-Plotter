@@ -2,5 +2,5 @@
 
 LIVE https://location-plotter.herokuapp.com/
 
-### Collects heights and send height statistics.
-Used Postgresql and smtplib to send emails.
+### Take data from .csv file (uploaded), find latitudes and longitudes.. then plots on map.
+Used Geocoder and Folium (Python Library)
