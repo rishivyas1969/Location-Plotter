@@ -15,14 +15,14 @@ def map(lst=None):
     avg_lat=sum_lat/len(lst)
     avg_long=sum_long/len(lst)
 
-    map = folium.Map(location=[avg_lat, avg_long], zoom_start=3, tiles="CartoDB dark_matter")
+    map = folium.Map(location=[avg_lat, avg_long], zoom_start=4, tiles="CartoDB dark_matter")
 
     fgv = folium.FeatureGroup("Plots")
 
     for i in range(len(lst)):
         pop = lst[i][0]
 
-        icon = folium.Icon(color='orange', icon='map-marker-alt', prefix='fa')
+        icon = folium.Icon(color='blue', icon='map-marker-alt', prefix='fa')
 
         fgv.add_child(folium.Marker(
             location=[lst[i][1], lst[i][2]],
