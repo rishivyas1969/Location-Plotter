@@ -2,5 +2,6 @@
 
 LIVE https://location-plotter.herokuapp.com/
 
-### Take data from .csv file (uploaded), find latitudes and longitudes.. then plots on map.
-Used Geocoder and Folium (Python Library)
+### Use the data from uploaded .csv file, find the latitudes and longitudes and then plots them on map.
+## Tech-Stack Used
+Geocoder and Folium (Python Library)
